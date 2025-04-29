@@ -1,0 +1,14 @@
+{
+  "routerMap": [
+    {
+      "name": "SubWebPage",
+      "pageSourceFile": "src/main/ets/pages/SubWebPage.ets",
+      "buildFunction": "SubWebPageBuilder"
+    },
+    {
+      "name": "SettingPage",
+      "pageSourceFile": "src/main/ets/pages/SettingPage.ets",
+      "buildFunction": "SettingPageBuilder"
+    }
+  ]
+}

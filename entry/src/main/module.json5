@@ -1,0 +1,162 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "srcEntry": './ets/entryability/MyAbilityStage.ets',
+    "description": "$string:app_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "routerMap": "$profile:route_map",
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:app_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:app_name",
+        "startWindowIcon": "$media:start_icon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home",
+            ]
+          },
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "ohos.want.action.viewData"
+            ]
+          },
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "wxentity.action.open"
+            ],
+            "uris": [
+              {
+                "scheme": "file",
+                "type": "general.object",
+                "linkFeature": "FileOpen"
+              }
+            ]
+          },
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "ohos.want.action.viewData"
+            ],
+            "uris": [
+              {
+                "scheme": "jsb"
+              }
+            ]
+          }
+        ],
+
+        "recoverable": true
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "EntryBackupAbility",
+        "srcEntry": "./ets/entrybackupability/EntryBackupAbility.ets",
+        "type": "backup",
+        "exported": false,
+        "metadata": [
+          {
+            "name": "ohos.extension.backup",
+            "resource": "$profile:backup_config"
+          }
+        ]
+      },
+      {
+        "name": "SampleRemoteNotification",
+        "type": "remoteNotification",
+        "srcEntry": "./ets/entryability/SampleRemoteNotification.ets",
+        "description": "RemoteNotificationExtAbility test",
+        "exported": false,
+        "skills": [
+          {
+            "actions": ["action.hms.push.extension.remotenotification"]
+          }
+        ]
+      }
+    ],
+    "querySchemes": [
+      "weixin",
+      "wxopensdk"
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO"
+      },
+      {
+        "name": "ohos.permission.LOCATION",
+        "reason": '$string:permission_reason_location',
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ]
+        }
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": '$string:permission_reason_location2',
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ]
+        }
+      },
+      {
+        "name": "ohos.permission.CAMERA",
+        "reason": "$string:permission_reason_camera",
+        "usedScene": {
+          "when": "inuse",
+          "abilities": [
+            "EntryAbility"
+          ]
+        }
+      },
+      {
+        "name": "ohos.permission.READ_CALENDAR",
+        "reason": "$string:permission_reason_read_calendar",
+        "usedScene": {
+          "when": "inuse",
+          "abilities": [
+            "EntryAbility"
+          ],
+        }
+      },
+      {
+        "name": "ohos.permission.WRITE_CALENDAR",
+        "reason": "$string:permission_reason_write_calendar",
+        "usedScene": {
+          "when": "inuse",
+          "abilities": [
+            "EntryAbility"
+          ],
+        },
+      }
+    ]
+  }
+}

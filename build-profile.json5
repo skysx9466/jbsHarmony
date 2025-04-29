@@ -1,0 +1,68 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "dev",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/skysx/.ohos/config/dev_jbs_DhbumfIPGQdg0D9JTg_vDbvLn_KDZRjExzNmzvbAfhg=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001ADA270FE37C2EA5F1A3A3EC647516DFE3CFADF2270F2523FDF41B6509C3759A4C4D977A8E5A82",
+          "profile": "/Users/skysx/.ohos/config/dev_jbs_DhbumfIPGQdg0D9JTg_vDbvLn_KDZRjExzNmzvbAfhg=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/skysx/.ohos/config/dev_jbs_DhbumfIPGQdg0D9JTg_vDbvLn_KDZRjExzNmzvbAfhg=.p12",
+          "storePassword": "0000001A8BEE43C875374773DCAAA0B348CE8FAC3E3CE23CCA3E326CBCA44A2799366C21AAEE263BC989"
+        }
+      },
+      {
+        "name": "pro",
+        "type": "HarmonyOS",
+        "material": {
+          "storePassword": "0000001916F296C45D1B1FF951B852ECE28CBA786407471FA9F34ECE9DC0AA5B898772479CED4A95F5",
+          "certpath": "./cer_supports/pro.cer",
+          "keyAlias": "key",
+          "keyPassword": "0000001A54D113B2D85C3B4C2D21B68F6AA0FFF0F974B2BF763B8EB24D46009ED6A1E0A00500DD598B21",
+          "profile": "./cer_supports/proRelease.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "./cer_supports/key.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "dev",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

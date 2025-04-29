@@ -1,0 +1,17 @@
+[
+  {
+    "type": "base_url_phone_4",
+    "url": "https://jbs.app.smyun.net",
+    "title": "4.0版本"
+  },
+  {
+    "type": "base_url_phone_3",
+    "url": "https://j.smyun.net/smyunnew/ims/login",
+    "title": "3.0版本"
+  },
+  {
+    "type": "base_url_custom",
+    "url": "",
+    "title": "自定义版本"
+  }
+]

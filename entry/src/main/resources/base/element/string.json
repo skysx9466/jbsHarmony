@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "permission_reason_location",
+      "value": "需要获取您的准确位置，用于获取位置和路线导航"
+    },
+    {
+      "name": "permission_reason_location2",
+      "value": "需要获取您的准确位置，用于获取位置和路线导航"
+    },
+    {
+      "name": "permission_reason_camera",
+      "value": "需要获取您的相机，用于图片上传和名片识别"
+    },
+    {
+      "name": "permission_reason_read_calendar",
+      "value": "需要访问您的日历，用于工作日程的管理"
+    },
+    {
+      "name": "permission_reason_write_calendar",
+      "value": "需要访问您的日历，用于工作日程的管理"
+    }
+  ]
+}

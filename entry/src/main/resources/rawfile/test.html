@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTF-8 示例</title>
+</head>
+<body>
+<button type="button" onclick="htmlTest('empty message')">绿色</button>
+<button type="button" onclick="alertTest()">弹窗</button>
+<button type="button" onclick="openNewVC()">openNewVC</button>
+<button type="button" onclick="setCacheData()">setCacheData</button>
+<button type="button" onclick="getCacheData()">getCacheData</button>
+<button type="button" onclick="delCacheData()">delCacheData</button>
+<button type="button" onclick="openBrowser()">openBrowser</button>
+<button type="button" onclick="makingPhoneCalls()">makingPhoneCalls</button>
+<button type="button" onclick="setSafeAreaOptions()">setSafeAreaOptions</button>
+<button type="button" onclick="getSafeAreaHeight()">getSafeAreaHeight</button>
+<button type="button" onclick="shareLinkToWeChat()">shareLinkToWeChat</button>
+<button type="button" onclick="login()">login</button>
+<button type="button" onclick="uploadFile()">uploadFile</button>
+<button type="button" onclick="shareToWeChatFile()">shareToWeChatFile</button>
+<button type="button" onclick="creatCalendar()">creatCalendar</button>
+<button type="button" onclick="getCalendar()">getCalendar</button>
+<button type="button" onclick="updateCalendar()">updateCalendar</button>
+<button type="button" onclick="deleteCalendar()">deleteCalendar</button>
+<h1 id="text">
+    这是一个测试信息，默认字体为黑色，调用runJavaScript方法后字体为绿色，调用runJavaScriptCodePassed方法后字体为红色
+</h1>
+<script>
+
+    // Native To Js
+    function htmlTest(param) {
+        document.getElementById('text').style.color = 'green';
+    }
+
+    function alertTest() {
+        alert('这是一个弹窗警告!');
+    }
+
+
+// Js To Native
+    function callArkTS() {
+        changeColor();
+    }
+
+    // openNewVC('页面标题', '页面地址')
+    function openNewVC() {
+        nativeInstance.openNewVC('百度两下', 'https:www.baidu.com');
+    }
+
+    // setCacheData('存储key', '存储值')
+    function setCacheData() {
+        nativeInstance.setCacheData('key1', 'ibdsuyfyu27');
+    }
+
+    // getCacheData('存储key')
+    function getCacheData() {
+        const key1 = nativeInstance.getCacheData('key1');
+        alert(key1);
+    }
+
+    // delCacheData('存储key')
+    function delCacheData() {
+        nativeInstance.delCacheData('key1');
+    }
+
+    // openBrowser('远程链接地址')
+    function openBrowser() {
+        nativeInstance.openBrowser('https://www.baidu.com');
+    }
+
+    // makingPhoneCalls('手机号')
+    function makingPhoneCalls() {
+        nativeInstance.makingPhoneCalls('17663703843');
+    }
+
+    // setSafeAreaOptions('前景色', '背景色', 高度)
+    function setSafeAreaOptions() {
+        nativeInstance.setSafeAreaOptions('#FFFF00', '#2B7FEE', 50);
+    }
+
+     // getSafeAreaHeight
+    function getSafeAreaHeight() {
+        const h = nativeInstance.getSafeAreaHeight();
+        alert(h);
+    }
+
+    // shareLinkToWeChat('标题',  链接)
+    function shareLinkToWeChat() {
+        nativeInstance.shareLinkToWeChat('百度', 'https://www.baidu.com');
+    }
+
+    function login() {
+        nativeInstance.login();
+    }
+
+    function uploadFile() {
+        const j = {"fileName": "流程整理", "fileSuffix": ".txt", "businessId": "172a57075b344f9eb8dce5ab6c0c701a", "directoryId": "4489823fff3b41e4a89cbc0cc0d43105"};
+        nativeInstance.uploadFile('https://testing.backend.smyun.net/file/fileBase/weChatFileSave', '流程整理.txt', 'eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjYyZGRiNjY1LTI2NDctNGVkZi05MzZmLWJlNmQ4MzhkYTU5ZSJ9.pzNpOFwN56aCha4O5YrIru2HyCzNhKzYllR6zRHiLctKHZ_xvkuJ85U9I5x8RczZFt_fSiJATRIh6xNS5W7YhA', JSON.stringify(j), (data) => {
+            alert(data);
+        });
+    }
+
+    function shareToWeChatFile() {
+        nativeInstance.shareToWeChatFile("page-sample.pdf", "https://www.sharedfilespro.com/shared-files/38/?10-page-sample.pdf");
+    }
+
+    function creatCalendar() {
+        nativeInstance.creatCalendar('日程测试标题 CCC', '2025-04-23 17:50:00', '2025-04-24 17:30:00', 540, (eventId) => {
+            alert(eventId); // 185
+        });
+    }
+
+    function getCalendar() {
+        nativeInstance.getCalendar('185', (data) => {
+           alert(JSON.stringify(data));
+        });
+    }
+
+    function updateCalendar() {
+        nativeInstance.updateCalendar('185', '日程测试标题 AB111', '2025-04-23 17:30:00', '2025-04-24 17:30:00', 300, (eventId) => {
+            alert(eventId);
+        });
+    }
+
+    function deleteCalendar() {
+        nativeInstance.deleteCalendar('185');
+    }
+
+</script>
+</body>
+</html>
